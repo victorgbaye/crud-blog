@@ -10,7 +10,7 @@ const CreatePost = ({isAuth}) => {
     const postRef = collection(db, "posts")
     const navigate = useNavigate(); 
     const createPost = async () =>{
-        await addDoc(postRef, {title, postText, author:{name: auth.currentUser.displayName, id: auth.currentUser.uid}});
+        await addDoc(postRef, {title, postText, author:{ name: auth.currentUser.displayName, id: auth.currentUser.uid }});
         navigate("/")
     }
     useEffect(() => {
